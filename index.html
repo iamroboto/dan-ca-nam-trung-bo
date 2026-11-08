@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Không gian dân ca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="view" aria-label="Không gian 3D"></div>
+
+  <header id="topbar">
+    <div>
+      <p class="eyebrow">Không gian dân ca Nam Trung Bộ</p>
+      <h1 id="scene-title"></h1>
+      <p id="scene-region" class="muted"></p>
+      <label class="scene-switch">Đổi cảnh <select id="scene-select"></select></label>
+    </div>
+    <span id="placeholder-badge" class="badge">Âm thanh và giai điệu đang là bản giữ chỗ</span>
+  </header>
+
+  <nav id="viewpoints" aria-label="Chỗ đứng"></nav>
+  <p id="hint">Kéo chuột để nhìn quanh · bấm vòng sáng hoặc phím 1–4 để đổi chỗ đứng · cuộn để thu phóng</p>
+
+  <aside id="panel">
+    <button id="panel-toggle" aria-expanded="true" aria-controls="panel-body">Ẩn</button>
+    <div id="panel-body">
+      <div role="tablist" class="tabs">
+        <button role="tab" aria-selected="true" aria-controls="tab-context">Bối cảnh</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-notation">Ký âm</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-stems">Bè</button>
+      </div>
+      <section role="tabpanel" id="tab-context">
+        <dl id="context-list"></dl>
+      </section>
+      <section role="tabpanel" id="tab-notation" hidden>
+        <p id="notation-caption" class="muted"></p>
+        <div id="notation"></div>
+        <p class="note">Ký âm đang được sinh tự động từ giai điệu giữ chỗ. Khi có ký âm điền dã sẽ thay bằng bản chính thức.</p>
+      </section>
+      <section role="tabpanel" id="tab-stems" hidden>
+        <div id="stem-list"><p class="muted">Bấm "Bước vào không gian" để bật âm thanh.</p></div>
+        <p class="note">Âm thanh định vị theo chỗ đứng: tới gần người mẹ thì giọng ru rõ hơn, quay đầu thì hướng âm đổi theo.</p>
+      </section>
+    </div>
+  </aside>
+
+  <footer id="player">
+    <div class="controls">
+      <button id="play" aria-pressed="false">Phát</button>
+      <button id="restart">Hát lại từ đầu</button>
+      <progress id="progress" max="1" value="0"></progress>
+      <span id="time" class="muted">0:00</span>
+    </div>
+    <p id="lyric-now" class="lyric" aria-live="polite"></p>
+    <p id="lyric-next" class="lyric-next"></p>
+  </footer>
+
+  <div id="intro">
+    <div class="intro-card">
+      <p class="eyebrow">Học viện Âm nhạc Huế · Đề tài "Phát huy giá trị nghệ thuật dân ca Nam Trung Bộ"</p>
+      <h2>Không gian dân ca Nam Trung Bộ</h2>
+      <p>Mô phỏng khung cảnh thực hành dân ca: con người, môi trường và không gian diễn xướng. Chọn một không gian để bước vào.</p>
+      <ul id="scene-list"></ul>
+      <button id="enter">Bước vào: <span id="enter-label"></span></button>
+      <p class="note">Nên dùng tai nghe để nghe âm thanh định vị. Giọng hát và giai điệu hiện được tổng hợp bằng máy để thử hệ thống, sẽ thay bằng bản thu của nhóm nghiên cứu.</p>
+    </div>
+  </div>
+
+  <script src="audio-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
