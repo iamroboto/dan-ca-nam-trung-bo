@@ -1,0 +1,1 @@
+var e={id:`v2-full-scene`,label:`V2`,port:5184,previewPort:5185,texturePx:1024,glbBudgetMb:5};export{e as t};
